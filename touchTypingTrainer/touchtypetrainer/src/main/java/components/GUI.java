@@ -1,16 +1,12 @@
 package components;
 
-import java.awt.BorderLayout;
-import java.awt.GridLayout;
-import java.awt.Image;
+import java.awt.*;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
-import javax.swing.BorderFactory;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 
-/**
+/*
  * class that generates a GUI for project
  */
 public class GUI {

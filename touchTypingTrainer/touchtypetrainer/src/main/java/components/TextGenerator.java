@@ -1,12 +1,11 @@
 package components;
 
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
+/*
+ * class that generates text for the user to type out
+ */
 public class TextGenerator {
 
     /**
