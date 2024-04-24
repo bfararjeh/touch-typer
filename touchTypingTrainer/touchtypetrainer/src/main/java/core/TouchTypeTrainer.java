@@ -1,7 +1,6 @@
 package core;
 
 import components.GUI;
-import components.TextGenerator;
 
 public class TouchTypeTrainer {
 
@@ -10,7 +9,5 @@ public class TouchTypeTrainer {
         @SuppressWarnings("unused")
         GUI gui = new GUI();
 
-        System.out.println(
-            TextGenerator.generateList(TextGenerator.grabRawText()));
     }
 }
