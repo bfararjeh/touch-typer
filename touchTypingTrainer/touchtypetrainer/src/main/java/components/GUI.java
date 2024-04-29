@@ -16,20 +16,23 @@ public class GUI {
         JFrame frame = new JFrame();
         
         JPanel panel = new JPanel();
-        panel.setBorder(
-                BorderFactory.createEmptyBorder(
-                        600, 400, 100, 600));
-        panel.setLayout(new GridLayout(0, 1));
-        
+        panel.setBorder(BorderFactory.createLineBorder(Color.black, 20));
+        // panel.setBorder(BorderFactory.createEmptyBorder(200, 200, 200, 200));
+
+        // panel.setLayout(new BorderLayout());
         frame.add(panel, BorderLayout.CENTER);
+
+
+
+        
+        Image icon = ImageIO.read(ClassLoader.getSystemResource("icon.png"));
+        frame.setIconImage(icon);   
+
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("Touch Type Trainer");
 
-        Image icon = ImageIO.read(ClassLoader.getSystemResource("icon.png"));
-        frame.setIconImage(icon);   
-        
-        frame.pack();
         frame.setVisible(true);  
-        frame.setResizable(false);
+        // frame.setResizable(false);
+        frame.pack();
     }
 }
