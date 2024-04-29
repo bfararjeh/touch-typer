@@ -28,14 +28,14 @@ public class Frame extends JFrame {
         panel = new JPanel();
 
         button1 = new JButton("Click me");
-        button2 = new JButton("No click me");
+        button2 = new JButton("This is a long piece of text");
         textArea = new JTextArea("i love christmas");
 
-        panel.add(button1, LEFT_ALIGNMENT);
-        panel.add(button2, RIGHT_ALIGNMENT);
-        panel.add(textArea, BOTTOM_ALIGNMENT);
-
         add(panel, BorderLayout.NORTH);
+        add(button1, BorderLayout.WEST);
+        add(button2, BorderLayout.EAST);
+        add(textArea, BorderLayout.CENTER);
+
         pack();
     }
 }
