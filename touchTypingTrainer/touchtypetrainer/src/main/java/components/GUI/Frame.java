@@ -26,15 +26,21 @@ public class Frame extends JFrame {
         
         setLayout(new BorderLayout());
         panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
 
         button1 = new JButton("Click me");
-        button2 = new JButton("This is a long piece of text");
-        textArea = new JTextArea("i love christmas");
+        button1.setMaximumSize(new Dimension(400, 400));
 
-        add(panel, BorderLayout.NORTH);
-        add(button1, BorderLayout.WEST);
-        add(button2, BorderLayout.EAST);
-        add(textArea, BorderLayout.CENTER);
+        button2 = new JButton("This is a long piece of text");
+
+        textArea = new JTextArea("i love christmas");
+        textArea.setMaximumSize(new Dimension(1750, 200));
+
+        add(panel, BorderLayout.CENTER);
+
+        panel.add(button1, Component.CENTER_ALIGNMENT);
+        panel.add(button2);
+        panel.add(textArea);
 
         pack();
     }
