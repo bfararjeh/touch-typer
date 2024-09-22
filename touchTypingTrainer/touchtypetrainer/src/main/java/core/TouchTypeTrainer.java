@@ -1,13 +1,13 @@
 package core;
 
-import components.GUI;
+import components.GUI.GUIMain;
 
 public class TouchTypeTrainer {
 
     public static void main(String[] args) throws Exception {
 
         @SuppressWarnings("unused")
-        GUI gui = new GUI();
+        GUIMain gui = new GUIMain();
 
     }
 }
