@@ -1,6 +1,7 @@
 package components.GUI;
 
 import javax.swing.*;
+
 import java.awt.*;
 import java.io.InputStream;
 
@@ -15,6 +16,7 @@ public class Frame extends JFrame {
     private JPanel mainPanel;
     private JLabel labelOne;
     private JLabel labelTwo;
+    private JTextField textField1;
 
     public Frame(){
         super("TouchTyper");
@@ -58,49 +60,34 @@ public class Frame extends JFrame {
         add(mainPanel);
 
         labelOne = new JLabel();
-        labelOne.setText("A String");
+        labelOne.setText("Under me is a text box");
         labelOne.setForeground(ColorScheme.text1);
+        labelOne.setVisible(true);
 
         labelTwo = new JLabel();
         labelTwo.setText("You should be able to change this text.");
         labelTwo.setFont(new Font("Monospaced", 1, 25));
         labelTwo.setForeground(ColorScheme.text1);
+        labelTwo.setVisible(true);
 
+        textField1 = new JTextField();
+        textField1.setColumns(1);
+        textField1.setFont(new Font("VeraMono", 0, 1));
+        textField1.setOpaque(false);
+        textField1.setBorder(BorderFactory.createEmptyBorder());
+        textField1.setVisible(true);
+
+        compInit.textFieldLabelChange(labelOne, textField1);
         compInit.addobjects(labelOne, mainPanel, mainLayout, 
         gbc, 0, 0, 1, 1);
-        compInit.addobjects(labelTwo, mainPanel, mainLayout, 
+        compInit.addobjects(textField1, mainPanel, mainLayout, 
         gbc, 0, 1, 1, 1);
+        compInit.addobjects(labelTwo, mainPanel, mainLayout, 
+        gbc, 0, 2, 1, 1);
 
         pack();
     }
 
-/*
- * class that allows adding components simply in one line
- */
-    public class ComponentInitialiser{
-
-        public void addobjects( Component component, 
-                                Container container, 
-                                GridBagLayout layout, 
-                                GridBagConstraints gbc, 
-                                int gridx, 
-                                int gridy, 
-                                int gridwidth, 
-                                int gridheight){
-    
-            gbc.gridx = gridx;
-            gbc.gridy = gridy;
-    
-            gbc.gridwidth = gridwidth;
-            gbc.gridheight = gridheight;
-
-            gbc.anchor = GridBagConstraints.CENTER;
-            gbc.fill = GridBagConstraints.NONE;
-    
-            layout.setConstraints(component, gbc);
-            container.add(component);
-        }
-    }
 
 /*
  * class that sets default font to called font (e.g. "VeraMono")
@@ -118,5 +105,6 @@ public class Frame extends JFrame {
             UIManager.put (key, f);
             }
         } 
+
 }
 
