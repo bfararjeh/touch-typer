@@ -1,7 +1,6 @@
 package components.GUI;
 
 import javax.swing.*;
-
 import java.awt.*;
 import java.io.InputStream;
 
@@ -14,6 +13,7 @@ public class Frame extends JFrame {
     private GridBagLayout mainLayout;
     private GridBagConstraints gbc;
     private JPanel mainPanel;
+    private JPanel textPanel;
     private JLabel labelOne;
     private JLabel labelTwo;
     private JTextField textField1;
@@ -30,7 +30,7 @@ public class Frame extends JFrame {
             classloader.getResourceAsStream("VeraMono.ttf");
 
             Font rawFont = Font.createFont(Font.TRUETYPE_FONT, iStream);
-            VeraMono = rawFont.deriveFont(0, 50);
+            VeraMono = rawFont.deriveFont(0, 25);
 
             GraphicsEnvironment ge = 
                 GraphicsEnvironment.getLocalGraphicsEnvironment();
@@ -59,13 +59,18 @@ public class Frame extends JFrame {
         mainPanel.setBackground(ColorScheme.background1);
         add(mainPanel);
 
+        textPanel = new JPanel();
+        textPanel.setLayout(mainLayout);
+        textPanel.setBackground(ColorScheme.background1);
+        textPanel.setPreferredSize(new Dimension(900, 500));
+
         labelOne = new JLabel();
-        labelOne.setText("Under me is a text box");
+        labelOne.setText("Begin Typing Here");
         labelOne.setForeground(ColorScheme.text1);
         labelOne.setVisible(true);
 
         labelTwo = new JLabel();
-        labelTwo.setText("You should be able to change this text.");
+        labelTwo.setText("You should be able to change the above text.");
         labelTwo.setFont(new Font("Monospaced", 1, 25));
         labelTwo.setForeground(ColorScheme.text1);
         labelTwo.setVisible(true);
@@ -78,7 +83,9 @@ public class Frame extends JFrame {
         textField1.setVisible(true);
 
         compInit.textFieldLabelChange(labelOne, textField1);
-        compInit.addobjects(labelOne, mainPanel, mainLayout, 
+        compInit.addobjects(textPanel, mainPanel, mainLayout, 
+        gbc, 0, 0, 1, 1);
+        compInit.addobjects(labelOne, textPanel, mainLayout, 
         gbc, 0, 0, 1, 1);
         compInit.addobjects(textField1, mainPanel, mainLayout, 
         gbc, 0, 1, 1, 1);
