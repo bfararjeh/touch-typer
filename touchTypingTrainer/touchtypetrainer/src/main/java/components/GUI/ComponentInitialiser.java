@@ -4,6 +4,8 @@ import java.awt.Component;
 import java.awt.Container;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.util.Arrays;
+import java.util.List;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -43,7 +45,10 @@ public class ComponentInitialiser{
 
 
     public void textFieldLabelChange(
-        JLabel masterLabel,
+        JLabel lineOne,
+        JLabel lineTwo,
+        JLabel lineThree,
+        JLabel promptLabel,
         JTextField masterField
     ){
 
@@ -65,8 +70,32 @@ public class ComponentInitialiser{
             }
 
             public void updateLabelFromTextField(DocumentEvent e){
-                masterLabel.setText(masterField.getText());
-                // TO-DO text validation
+
+                String textFieldData = masterField.getText();
+
+                if (textFieldData.length() <= 60) {
+                    lineOne.setText(textFieldData);
+                    lineTwo.setText("");
+                }
+
+                else if (textFieldData.length() <= 120) {
+                    List<String> stringSplitList = Arrays.asList(
+                        textFieldData.split("(?<=\\G.{60})"));
+
+                    lineTwo.setText(stringSplitList.get(1));
+                    lineThree.setText("");
+                }
+
+                else if (textFieldData.length() <= 180) {
+                    List<String> stringSplitList = Arrays.asList(
+                        textFieldData.split("(?<=\\G.{60})"));
+                        
+                    lineThree.setText(stringSplitList.get(2));
+                }
+
+                else {
+                }
+
             }
             
         });

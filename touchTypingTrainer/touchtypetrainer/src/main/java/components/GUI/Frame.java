@@ -14,8 +14,10 @@ public class Frame extends JFrame {
     private GridBagConstraints gbc;
     private JPanel mainPanel;
     private JPanel textPanel;
-    private JLabel labelOne;
-    private JLabel labelTwo;
+    private JLabel inputLineOne;
+    private JLabel inputLineTwo;
+    private JLabel inputLineThree;
+    private JLabel notificationLabel;
     private JTextField textField1;
 
     public Frame(){
@@ -64,16 +66,26 @@ public class Frame extends JFrame {
         textPanel.setBackground(ColorScheme.background1);
         textPanel.setPreferredSize(new Dimension(900, 500));
 
-        labelOne = new JLabel();
-        labelOne.setText("Begin Typing Here");
-        labelOne.setForeground(ColorScheme.text1);
-        labelOne.setVisible(true);
+        inputLineOne = new JLabel();
+        inputLineOne.setText("Line 1");
+        inputLineOne.setForeground(ColorScheme.text1);
+        inputLineOne.setVisible(true);
 
-        labelTwo = new JLabel();
-        labelTwo.setText("You should be able to change the above text.");
-        labelTwo.setFont(new Font("Monospaced", 1, 25));
-        labelTwo.setForeground(ColorScheme.text1);
-        labelTwo.setVisible(true);
+        inputLineTwo = new JLabel();
+        inputLineTwo.setText("");
+        inputLineTwo.setForeground(ColorScheme.text1);
+        inputLineTwo.setVisible(true);
+        
+        inputLineThree = new JLabel();
+        inputLineThree.setText("");
+        inputLineThree.setForeground(ColorScheme.text1);
+        inputLineThree.setVisible(true);
+
+        notificationLabel = new JLabel();
+        notificationLabel.setText("You should be able to change the above text.");
+        notificationLabel.setFont(new Font("Monospaced", 1, 25));
+        notificationLabel.setForeground(ColorScheme.text1);
+        notificationLabel.setVisible(true);
 
         textField1 = new JTextField();
         textField1.setColumns(1);
@@ -82,15 +94,22 @@ public class Frame extends JFrame {
         textField1.setBorder(BorderFactory.createEmptyBorder());
         textField1.setVisible(true);
 
-        compInit.textFieldLabelChange(labelOne, textField1);
+        compInit.textFieldLabelChange(
+            inputLineOne, inputLineTwo, inputLineThree, notificationLabel, textField1);
+
         compInit.addobjects(textPanel, mainPanel, mainLayout, 
-        gbc, 0, 0, 1, 1);
-        compInit.addobjects(labelOne, textPanel, mainLayout, 
         gbc, 0, 0, 1, 1);
         compInit.addobjects(textField1, mainPanel, mainLayout, 
         gbc, 0, 1, 1, 1);
-        compInit.addobjects(labelTwo, mainPanel, mainLayout, 
+        compInit.addobjects(notificationLabel, mainPanel, mainLayout, 
         gbc, 0, 2, 1, 1);
+
+        compInit.addobjects(inputLineOne, textPanel, mainLayout, 
+        gbc, 0, 0, 1, 1);   
+        compInit.addobjects(inputLineTwo, textPanel, mainLayout, 
+        gbc, 0, 1, 1, 1);   
+        compInit.addobjects(inputLineThree, textPanel, mainLayout, 
+        gbc, 0, 2, 1, 1);   
 
         pack();
     }
