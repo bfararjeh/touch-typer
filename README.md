@@ -13,3 +13,7 @@ Opened and created a github project for this project. It seems like a useful fea
 ### Learning Java Swing
 
 I've been making steady work on the GUI as I type this, and learning Swing in the process. The library seems good, and while it's complicated figuring out exactly how to get what you want on the screen, it's consistent. Getting something working once is good enough to have learnt how to do it moving on to the future. Also experiencing challenges figuring out the optimal way to code what I want, as Swing and furthermore Java offers many ways to approach the same problem, so needing to pick the needle in the haystack of libraries is becoming a recurring theme.
+
+### Project On Hold
+
+Unfortunately, I haven't been able to work on this project much recently. University is taking up too much of my time and other things of the sort hold higher priority right now. I will return to this eventually.
