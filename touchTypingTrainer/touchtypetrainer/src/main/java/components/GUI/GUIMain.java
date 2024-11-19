@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.Image;
 
 /*
- * class that generates a GUI for project
+ * class that generates a GUI for project.
  */
 public final class GUIMain {
 
