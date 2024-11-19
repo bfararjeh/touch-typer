@@ -15,6 +15,8 @@ public final class GUIMain {
     public GUIMain(){
 
         SwingUtilities.invokeLater(new Runnable(){
+            // functino that builds the frame. it also:
+            //  locates the icon image
             public void run() {
                 frame = new Frame();
 
@@ -23,12 +25,13 @@ public final class GUIMain {
                     icon = ImageIO.read(ClassLoader.getSystemResource(
                         "icon.png"));
                     frame.setIconImage(icon);
+                
                 } catch (Exception e) {
                     System.out.println("Caught an Exception!" 
-                    + "'icon.png' cannot be found");
+                    + " 'icon.png' cannot be found");
                     e.printStackTrace();
-                }
-            }
-        });
+                    }
+                 }       
+            });
+        }
     }
-}
